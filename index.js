@@ -12,7 +12,13 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: '*', // For now, allowing all origins. You can change this to your firebase URL later.
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '50mb' })); // To handle large base64 strings
 
 // Routes
