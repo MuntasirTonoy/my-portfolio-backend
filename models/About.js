@@ -29,6 +29,11 @@ const aboutSchema = mongoose.Schema({
     title: String,
     description: String,
     iconColor: String,
+  }],
+  certificates: [{
+    title: String,
+    institution: String,
+    image: String,
   }]
 }, {
   timestamps: true,
